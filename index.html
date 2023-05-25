@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>FindMyEvent</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets\style.css" />
+    <link
+      href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
 
-</head>
+  <body class="bg-gray-200">
+    <div class="topnav bg-blue-500 px-4 py-2">
+      <a class="active text-white" href="#home">Home</a>
+      <a href="#about" class="text-white">About</a>
+      <a href="#contact" class="text-white">Contact</a>
+      <input type="text" placeholder="Search.." class="rounded px-2 py-1" />
+    </div>
+
+
+    <header class="text-center py-10">
+      <h1 class="text-4xl font-bold">FindMyEvent</h1>
+      <p class="text-lg text-gray-600">Let's get this party started.</p>
+    </header>
 
 <body>
 
@@ -26,7 +40,7 @@
         <h1>FindMyEvent</h1>
         <p>Let's get this party started.</p>
     </Header>
- <!--Constantin's code-->
+
       <div class="container">
         <form id="travelForm">
           <div class="form-group">
@@ -47,22 +61,71 @@
         </form>
         <div id="tripResult"></div>
       </div>
-      <!--//////-->
 
-      <div class="hero-image">
-        <div class="hero-text">
-      <button</button>
+
+    <div class="container mx-auto px-4">
+      <form
+        id="travelForm"
+        class="max-w-sm mx-auto bg-white shadow-md rounded p-4"
+      >
+        <div class="mb-4">
+          <label for="destination" class="block font-medium text-gray-700"
+            >Destination:</label
+          >
+          <input
+            type="text"
+            id="destination"
+            name="destination"
+            placeholder="Enter your destination"
+            class="w-full rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none px-2 py-1"
+            required
+          />
         </div>
-      </div> 
+        <div class="mb-4">
+          <label for="departure" class="block font-medium text-gray-700"
+            >Departure Date:</label
+          >
+          <input
+            type="date"
+            id="departure"
+            name="departure"
+            class="w-full rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none px-2 py-1"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="return" class="block font-medium text-gray-700"
+            >Return Date:</label
+          >
+          <input
+            type="date"
+            id="return"
+            name="return"
+            class="w-full rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none px-2 py-1"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            type="submit"
+            value="Plan My Trip"
+            class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
+          />
+        </div>
+      </form>
+      <div id="tripResult" class="mt-8"></div>
+    </div>
 
-    
+    <div class="hero-image h-screen flex items-center justify-center">
+      <div class="hero-text text-white text-center">
+        <button
+          class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
 
- 
-
-<script src="assets\script.js"></script>
-</body>
-
-
+    <script src="assets/script.js"></script>
+  </body>
 </html>
-
-
