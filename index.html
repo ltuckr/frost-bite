@@ -2,26 +2,34 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FrostBite</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link rel="stylesheet" href="assets\style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FrostBite</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
 
 <body>
-  
+
   <div class="container mx-auto">
 
     <!--NAVBAR-->
     <div class="flex justify-between items-center py-4 bg-blue-900">
       <div class="flex-shrink-0 ml-10 cursor-pointer">
         <!--logo symbol-->
-        <svg class="h-8 w-8 text-orange-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="3" y1="12" x2="6" y2="12" />  <line x1="12" y1="3" x2="12" y2="6" />  <line x1="7.8" y1="7.8" x2="5.6" y2="5.6" />  <line x1="16.2" y1="7.8" x2="18.4" y2="5.6" />  <line x1="7.8" y1="16.2" x2="5.6" y2="18.4" />  <path d="M12 12l9 3l-4 2l-2 4l-3 -9" /></svg>
+        <svg class="h-8 w-8 text-orange-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" />
+          <line x1="3" y1="12" x2="6" y2="12" />
+          <line x1="12" y1="3" x2="12" y2="6" />
+          <line x1="7.8" y1="7.8" x2="5.6" y2="5.6" />
+          <line x1="16.2" y1="7.8" x2="18.4" y2="5.6" />
+          <line x1="7.8" y1="16.2" x2="5.6" y2="18.4" />
+          <path d="M12 12l9 3l-4 2l-2 4l-3 -9" />
+        </svg>
         <!--site name-->
         <span class="ml-1 text-3xl text-blue-200 font-semibold">FrostBite</span>
       </div>
@@ -37,49 +45,111 @@
           <a class="text-white hover:text-blue-300" href="#">Team</a>
         </li>
       </ul>
-      </div>
+    </div>
 
     <!---HERO-->
     <div class="hero min-h-screen">
-      <img src="assets\AdobeStock_583506554.jpeg" alt="Girl eating icecream">
+      <img src="assets/AdobeStock_583506554.jpeg" alt="Girl eating icecream">
       <div class="hero-overlay bg-opacity-30"></div>
-      <div class="hero-content text-center text-neutral-content">
-        <div class="max-w-md">
+      <div class="w-full hero-content text-center text-neutral-content">
+        <div>
           <h1 class="mb-5 text-5xl font-bold">Hungry?</h1>
           <p class="mb-5">Rain or shine, we've got you covered.</p>
 
-    
-    <!--Search Form --->             
-<form>
+          <!--Search Form --->
+          <form>
+            <!--search city/store city drop down-->
+            <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Find your city <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 
-  <!--search city/store city drop down-->
-  <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Find your city <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-
-  </div>
+          </form>
         </div>
       </div>
     </div>
 
+    <!-- Card Container -->
+    <div class="container mx-auto mb-12 w-full">
+      <div class="grid grid-cols-4 gap-4">
+        <!-- Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 4</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        
+                <!-- Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 4</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!--SECOND ROW-->
+
+        <!-- Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      
+        <!-- Card 2 -->
+         <div class="bg-white shadow-lg rounded-lg p-4">
+           <h2 class="text-xl font-bold mb-2">Card 2</h2>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         </div>
+      
+        <!-- Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+            <h2 class="text-xl font-bold mb-2">Card 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      
+        <!-- Card 4 -->
+        <div class="bg-white shadow-lg rounded-lg p-4">
+          <h2 class="text-xl font-bold mb-2">Card 4</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         </div>
+
       </div>
     </div>
 
-</form>
-
-  </div>
- </div>
-</div>
-</div>
-
-          </div>
-
-     
-      </ul>
-    </div>
-    
   </div>
 
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/script.js"></script>
-  </body>
+</body>
+
 </html>
