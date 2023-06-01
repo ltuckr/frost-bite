@@ -1,4 +1,4 @@
-//CONSTATIN UPDATED CODE
+//CONSTANTIN UPDATED CODE
 document
   .getElementById("searchForm")
   .addEventListener("submit", function (event) {
