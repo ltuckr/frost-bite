@@ -1,45 +1,126 @@
-document.addEventListener("DOMContentLoaded", function () {
-  function fetchData(url) {
-    return fetch(url, {
-      method: "GET",
-      headers: {
-        "user-key": "173297606dd309e858d947e8c0e0562c",
-      },
-    })
-      .then(function (response) {
-        return response.json();
+//CONSTATIN UPDATED CODE
+document
+  .getElementById("searchForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Weather API key and URL
+    const apiKey = "6075e79fd45d41f9ba605748232605";
+    const city = document.getElementById("cityInput").value;
+    const weatherApiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+
+    // Zomato API key and URL
+    const zomatoApiKey = "173297606dd309e858d947e8c0e0562c";
+    const zomatoApiUrl = `https://developers.zomato.com/api/v2.1`;
+
+    // Retrieve previous search data from local storage
+    const previousSearchData =
+      JSON.parse(localStorage.getItem("searchData")) || {};
+
+    // Create an object to hold the data
+    const searchData = {
+      city: city,
+      weatherData: null,
+      zomatoData: null,
+    };
+
+    // Merge previous search data with new search data
+    const updatedSearchData = { ...previousSearchData, [city]: searchData };
+
+    // Store the updated search data object in local storage
+    localStorage.setItem("searchData", JSON.stringify(updatedSearchData));
+
+    // Fetch weather data
+    fetch(weatherApiUrl)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error: " + response.status);
+        }
       })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+      .then((weatherData) => {
+        const temperature = weatherData.current.temp_f;
+        const weatherDescription = weatherData.current.condition.text;
+        const humidity = weatherData.current.humidity;
+        const windSpeed = weatherData.current.wind_mph;
 
-  function searchRestaurants(cityInput) {
-    var cityURL =
-      "https://developers.zomato.com/api/v2.1/cities?count=12&q=" + cityInput;
+        const weatherHtml = `
+        <div>
+          <h2>Weather in ${city}</h2>
+          <p>Temperature: ${temperature}°F</p>
+          <p>Description: ${weatherDescription}</p>
+          <p>Humidity: ${humidity}%</p>
+          <p>Wind Speed: ${windSpeed} mph</p>
+        </div>
+      `;
 
-    fetchData(cityURL)
-      .then(function (data) {
-        var cityId = data.location_suggestions[0].id;
-        var searchURL =
-          "https://developers.zomato.com/api/v2.1/search?count=12&entity_id=" +
-          cityId +
-          "&entity_type=city";
+        const weatherContainer = document.getElementById("weatherContainer");
+        weatherContainer.innerHTML = weatherHtml; // Display weather information
 
-        return fetchData(searchURL);
+        return fetch(`${zomatoApiUrl}/cities?count=8&q=${city}`, {
+          method: "GET",
+          headers: {
+            "user-key": zomatoApiKey,
+          },
+        });
       })
-      .then(function (result) {
-        var resultContainer = document.getElementById("resultContainer");
-        resultContainer.innerHTML = ""; // Clear previous results
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error: " + response.status);
+        }
+      })
+      .then((zomatoData) => {
+        const cityId = zomatoData.location_suggestions[0].id;
+        const searchURL = `${zomatoApiUrl}/search?count=8&entity_id=${cityId}&entity_type=city`;
+
+        return fetch(searchURL, {
+          method: "GET",
+          headers: {
+            "user-key": zomatoApiKey,
+          },
+        });
+      })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error: " + response.status);
+        }
+      })
+      .then((result) => {
+        const resultContainer = document.getElementById("resultContainer");
+        resultContainer.innerHTML = ""; // Clear the result container
+
+        // Create a container for the cards
+        const cardContainer = document.createElement("div");
+        cardContainer.classList.add(
+          "grid",
+          "grid-cols-1",
+          "sm:grid-cols-2",
+          "md:grid-cols-4",
+          "gap-4"
+        );
 
         // Generate HTML markup for each restaurant
-        result.restaurants.forEach(function (restaurant) {
-          var restaurantName = restaurant.restaurant.name;
-          var restaurantThumb = restaurant.restaurant.thumb;
+        result.restaurants.forEach((restaurant) => {
+          const restaurantName = restaurant.restaurant.name;
+          const restaurantThumb = restaurant.restaurant.thumb;
+
+          // Create card element
+          const cardElement = document.createElement("div");
+          cardElement.classList.add(
+            "bg-white",
+            "rounded-lg",
+            "shadow-md",
+            "p-4"
+          );
 
           // Create elements for restaurant name and picture
-          var nameElement = document.createElement("h3");
-          var pictureElement = document.createElement("img");
+          const nameElement = document.createElement("h3");
+          const pictureElement = document.createElement("img");
 
           // Set text content for name element
           nameElement.textContent = restaurantName;
@@ -47,20 +128,20 @@ document.addEventListener("DOMContentLoaded", function () {
           // Set attributes for picture element
           pictureElement.src = restaurantThumb;
           pictureElement.alt = restaurantName;
+          pictureElement.classList.add("rounded-lg", "w-full");
 
-          // Append name and picture elements to result container
-          resultContainer.appendChild(nameElement);
-          resultContainer.appendChild(pictureElement);
+          // Append name and picture elements to card element
+          cardElement.appendChild(nameElement);
+          cardElement.appendChild(pictureElement);
+
+          // Append card element to card container
+          cardContainer.appendChild(cardElement);
         });
-      });
-  }
 
-  // Event listener for the form submission
-  document
-    .getElementById("searchForm")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      var cityInput = document.getElementById("cityInput").value;
-      searchRestaurants(cityInput);
-    });
-});
+        // Append card container to result container
+        resultContainer.appendChild(cardContainer);
+      })
+      .catch((error) => {
+        console.log("Error:", error.message);
+      });
+  });
