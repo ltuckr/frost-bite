@@ -1,4 +1,3 @@
-//CONSTANTIN UPDATED CODE
 document
   .getElementById("searchForm")
   .addEventListener("submit", function (event) {
@@ -27,9 +26,6 @@ document
     // Merge previous search data with new search data
     const updatedSearchData = { ...previousSearchData, [city]: searchData };
 
-    // Store the updated search data object in local storage
-    localStorage.setItem("searchData", JSON.stringify(updatedSearchData));
-
     // Fetch weather data
     fetch(weatherApiUrl)
       .then((response) => {
@@ -40,23 +36,36 @@ document
         }
       })
       .then((weatherData) => {
+        // Check if weather data is null
+        if (weatherData === null) {
+          throw new Error("Weather data not available");
+        }
+
         const temperature = weatherData.current.temp_f;
         const weatherDescription = weatherData.current.condition.text;
         const humidity = weatherData.current.humidity;
         const windSpeed = weatherData.current.wind_mph;
 
         const weatherHtml = `
-        <div>
-          <h2>Weather in ${city}</h2>
-          <p>Temperature: ${temperature}°F</p>
-          <p>Description: ${weatherDescription}</p>
-          <p>Humidity: ${humidity}%</p>
-          <p>Wind Speed: ${windSpeed} mph</p>
-        </div>
-      `;
+    <div>
+      <h2>Weather in ${city}</h2>
+      <p>Temperature: ${temperature}°F</p>
+      <p>Description: ${weatherDescription}</p>
+      <p>Humidity: ${humidity}%</p>
+      <p>Wind Speed: ${windSpeed} mph</p>
+    </div>
+    `;
 
         const weatherContainer = document.getElementById("weatherContainer");
         weatherContainer.innerHTML = weatherHtml; // Display weather information
+
+        // Save weather data in the search data object
+        searchData.weatherData = {
+          temperature,
+          weatherDescription,
+          humidity,
+          windSpeed,
+        };
 
         return fetch(`${zomatoApiUrl}/cities?count=8&q=${city}`, {
           method: "GET",
@@ -140,6 +149,15 @@ document
 
         // Append card container to result container
         resultContainer.appendChild(cardContainer);
+
+        // Save Zomato data in the search data object
+        searchData.zomatoData = result.restaurants;
+
+        // Check if weather data is null before storing in local storage
+        if (searchData.weatherData !== null) {
+          // Update the search data object in local storage
+          localStorage.setItem("searchData", JSON.stringify(updatedSearchData));
+        }
       })
       .catch((error) => {
         console.log("Error:", error.message);
