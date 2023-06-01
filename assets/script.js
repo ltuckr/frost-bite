@@ -1,5 +1,6 @@
-//CONSTATIN UPDATED CODE
-document
+//UPDATED CODE
+
+  document
   .getElementById("searchForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
@@ -57,6 +58,14 @@ document
 
         const weatherContainer = document.getElementById("weatherContainer");
         weatherContainer.innerHTML = weatherHtml; // Display weather information
+
+        // Save weather data in the search data object
+        searchData.weatherData = {
+          temperature,
+          weatherDescription,
+          humidity,
+          windSpeed,
+        };
 
         return fetch(`${zomatoApiUrl}/cities?count=8&q=${city}`, {
           method: "GET",
@@ -140,6 +149,12 @@ document
 
         // Append card container to result container
         resultContainer.appendChild(cardContainer);
+
+        // Save Zomato data in the search data object
+        searchData.zomatoData = result.restaurants;
+
+        // Update the search data object in local storage
+        localStorage.setItem("searchData", JSON.stringify(updatedSearchData));
       })
       .catch((error) => {
         console.log("Error:", error.message);
