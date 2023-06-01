@@ -41,115 +41,80 @@
         <li class="mr-6 p-1">
           <a class="text-white hover:text-blue-300" href="#">About</a>
         </li>
-        <li class="mr-6 p-1">
-          <a class="text-white hover:text-blue-300" href="#">Team</a>
-        </li>
       </ul>
     </div>
 
     <!---HERO-->
-    <div class="hero min-h-screen">
-      <img src="assets/AdobeStock_583506554.jpeg" alt="Girl eating icecream">
+    <div class="hero relative min-h-screen">
+      <img src="assets/AdobeStock_583506554.jpeg" alt="Girl eating ice cream">
       <div class="hero-overlay bg-opacity-30"></div>
-      <div class="w-full hero-content text-center text-neutral-content">
-        <div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
           <h1 class="mb-5 text-5xl font-bold">Hungry?</h1>
           <p class="mb-5">Rain or shine, we've got you covered.</p>
 
           <!--Search Form --->
           <form>
             <!--search city/store city drop down-->
-            <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Find your city <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-
+            <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Find your city <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+           </button>
           </form>
         </div>
       </div>
+         <!-- Weather Info Container -->
+         <div class="absolute top-4 left-4 m-4 bg-white bg-opacity-50 p-4 rounded-lg">
+          <!-- Add your weather information here -->
+          <h3 class="text-xl font-semibold">Current Weather</h3>
+          <p class="text-lg">Temperature: 75°F</p>
+          <p class="text-lg">Condition: Sunny</p>
+        </div>
+ <!-- Card Container -->
+ <div class="absolute bottom-0 left-0 right-0 p-4 bg-gray-800 bg-opacity-50">
+  <div class="grid grid-cols-4 gap-4">
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 1</h4>
+      <p>Content for Card 1</p>
     </div>
-
-    <!-- Card Container -->
-    <div class="container mx-auto mb-12 w-full">
-      <div class="grid grid-cols-4 gap-4">
-        <!-- Card 1 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 1</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 3</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        
-                <!-- Card 1 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 1</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 3</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <!--SECOND ROW-->
-
-        <!-- Card 1 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 1</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      
-        <!-- Card 2 -->
-         <div class="bg-white shadow-lg rounded-lg p-4">
-           <h2 class="text-xl font-bold mb-2">Card 2</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-         </div>
-      
-        <!-- Card 3 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-            <h2 class="text-xl font-bold mb-2">Card 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      
-        <!-- Card 4 -->
-        <div class="bg-white shadow-lg rounded-lg p-4">
-          <h2 class="text-xl font-bold mb-2">Card 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-         </div>
-
-      </div>
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 2</h4>
+      <p>Content for Card 2</p>
     </div>
-
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 3</h4>
+      <p>Content for Card 3</p>
+    </div>
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 4</h4>
+      <p>Content for Card 4</p>
+    </div>
   </div>
+  <div class="grid grid-cols-4 gap-4 mt-4">
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 5</h4>
+      <p>Content for Card 5</p>
+    </div>
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 6</h4>
+      <p>Content for Card 6</p>
+    </div>
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 7</h4>
+      <p>Content for Card 7</p>
+    </div>
+    <div class="card p-4 bg-white bg-opacity-75">
+      <h4 class="text-lg font-semibold">Card 8</h4>
+      <p>Content for Card 8</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/script.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/script.js"></script>
 </body>
 
 </html>
+
