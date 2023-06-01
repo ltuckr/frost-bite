@@ -1,56 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FrostBite</title>
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="assets\style.css" />
 
-  <body
-    class="bg-gray-100 bg-cover"
-    style="
-      background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700652113.jpg');
-    "
-  >
-    <nav class="bg-blue-500 text-white">
-      <div
-        class="container mx-auto px-4 py-2 flex items-center justify-between"
-      >
-        <a href="#" class="text-lg font-bold">FrostBite</a>
-        <div class="flex items-center space-x-4">
-          <a href="#" class="text-white">Home</a>
-          <a href="#" class="text-white">Services</a>
-          <a href="#" class="text-white">Team</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container mx-auto py-10 flex flex-col items-center">
-      <div id="weatherContainer" class="mb-6"></div>
-
-      <form id="searchForm" class="flex items-center mb-6">
-        <input
-          id="cityInput"
-          type="text"
-          class="border rounded px-2 py-1 mr-2"
-          required
-          placeholder="Search city"
-        />
-        <button
-          type="submit"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Hungry!
-        </button>
-      </form>
-
-      <div id="resultContainer"></div>
+  <body class="bg-gray-200">
+    <div class="topnav bg-blue-500 px-4 py-2">
+      <a class="active text-white" href="#home">Home</a>
+      <a href="#about" class="text-white">About</a>
+      <a href="#contact" class="text-white">Contact</a>
+      <input type="text" placeholder="Search.." class="rounded px-2 py-1" />
     </div>
 
-    <script src="assets/script.js"></script>
+<body>
+  
+  <div class="container mx-auto">
+   
+
+
+    <!--NAVBAR-->
+    <div class="flex justify-between items-center py-4 bg-blue-900">
+      <div class="flex-shrink-0 ml-10 cursor-pointer">
+        <!--logo symbol-->
+        <svg class="h-8 w-8 text-orange-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="3" y1="12" x2="6" y2="12" />  <line x1="12" y1="3" x2="12" y2="6" />  <line x1="7.8" y1="7.8" x2="5.6" y2="5.6" />  <line x1="16.2" y1="7.8" x2="18.4" y2="5.6" />  <line x1="7.8" y1="16.2" x2="5.6" y2="18.4" />  <path d="M12 12l9 3l-4 2l-2 4l-3 -9" /></svg>
+        <!--site name-->
+        <span class="ml-1 text-3xl text-blue-200 font-semibold">FrostBite</span>
+      </div>
+      <i class="fas fa-bars fa-2x visible md:invisible mr-10 md:mr-0 text-blue-200 cursor-pointer"></i>
+      <ul class="hidden md:flex overflow-x-hidden mr-10 font-semibold">
+        <li class="mr-6 p-1 border-b-2 border-orange-500">
+          <a class="text-blue-200 cursor-default" href="#">Home</a>
+        </li>
+        <li class="mr-6 p-1">
+          <a class="text-white hover:text-blue-300" href="#">About</a>
+        </li>
+        <li class="mr-6 p-1">
+          <a class="text-white hover:text-blue-300" href="#">Team</a>
+        </li>
+      </ul>
+      </div>
+
+
+    <!---HERO-->
+    <div class="hero min-h-screen">
+      <img src="assets\AdobeStock_583506554.jpeg" alt="Girl eating icecream">
+      <div class="hero-overlay bg-opacity-30"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">Hungry?</h1>
+          <p class="mb-5">Rain or shine, we've got you covered.</p>
+    
+    <!--Search Form --->             
+<form>
+<!--search city/store city drop down-->
+  <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Find your city <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+  </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image h-screen flex items-center justify-center">
+      <div class="hero-text text-white text-center">
+        <button
+          class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+
+</form>
+
+  </div>
+ </div>
+</div>
+</div>
+
+          </div>
+
+     
+      </ul>
+    </div>
+    
+  </div>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
+  <script src="assets/script.js"></script>
   </body>
 </html>
