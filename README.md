@@ -13,9 +13,9 @@ To install and develop this project, we first had to create the repository and a
 ## Usage
 ---
 
-1. GitHub Repository: https://github.com/ltuckr/find-my-event
+1. GitHub Repository: https://github.com/ltuckr/frost-bite
 
-2. Project Url: https://ltuckr.github.io/find-my-event/
+2. Project Url: https://github.com/ltuckr/frost-bite
  --- 
 
 ## Images
@@ -39,6 +39,9 @@ II. WEB-BASED GUIDES and ACCREDITATIONS:
  - https://www.weatherapi.com/api-explorer.aspx#forecast
  - https://www.weatherapi.com/docs/#intro-request
  - https://www.weatherapi.com/api.aspx
+ - https://daisyui.com/
+ - https://flowbite.com/
+ - https://tailwindcss.com/
  - Javascript was used from previous coding challenges and stack overflow
  - 
 
