@@ -67,7 +67,7 @@ document
           windSpeed,
         };
 
-        return fetch(`${zomatoApiUrl}/cities?count=8&q=${city}`, {
+        return fetch(`${zomatoApiUrl}/cities?count=16&q=${city}`, {
           method: "GET",
           headers: {
             "user-key": zomatoApiKey,
@@ -83,7 +83,7 @@ document
       })
       .then((zomatoData) => {
         const cityId = zomatoData.location_suggestions[0].id;
-        const searchURL = `${zomatoApiUrl}/search?count=8&entity_id=${cityId}&entity_type=city`;
+        const searchURL = `${zomatoApiUrl}/search?count=16&entity_id=${cityId}&entity_type=city`;
 
         return fetch(searchURL, {
           method: "GET",
@@ -123,8 +123,10 @@ document
           cardElement.classList.add(
             "bg-white",
             "rounded-lg",
+            "bg-opacity-30",
             "shadow-md",
-            "p-4"
+            "p-4",
+            "text-black"
           );
 
           // Create elements for restaurant name and picture
