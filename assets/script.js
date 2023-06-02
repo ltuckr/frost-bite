@@ -137,7 +137,13 @@ document
           nameElement.textContent = restaurantName;
 
           // Set attributes for picture element
-          pictureElement.src = restaurantThumb;
+          if (restaurantThumb.includes("res_avatar_476_320_1x_new.png")) {
+            // Replace the image URL with the different picture
+            pictureElement.src = "./assets/No-image.jpg";
+          } else {
+            pictureElement.src = restaurantThumb;
+          }
+
           pictureElement.alt = restaurantName;
           pictureElement.classList.add("rounded-lg", "w-full");
 
