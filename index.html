@@ -61,8 +61,9 @@ type="text/css"
       </div>
       
       <!---HERO-->
-      <div class="hero relative min-h-screen bg-blue-900">
-        <img src="assets/Hero.jpeg" alt="Girl eating ice cream" class="h-auto max-w-full">
+      <div class="hero relative min-h-screen bg-gradient-to-r from-orange-400 to-blue-600">
+        <!--updated img class hides img on small screens-->
+        <img src="assets/Hero.jpeg" alt="Girl eating ice cream" class="hidden md:block object-cover w-full h-full"> 
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-md">
     
@@ -88,8 +89,10 @@ type="text/css"
             </form>
           </div>
 
-                      <!-- Weather Info Container -->
-        <div id="weatherContainer" class="relative h-32 w-32"></div>  
+          <!-- Weather Info Container -->
+          <div class="relative">
+          <div class="z-10 bg-transparent p-4">             
+        <div id="weatherContainer"></div>  
 
        
   
