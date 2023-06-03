@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>FrostBite</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet"
+type="text/css"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
@@ -22,6 +21,7 @@
   </head>
 
   <body>
+   
   <nav class="bg-blue-500 text-white">
       <!--NAVBAR-->
       <div class="flex justify-between items-center py-4 bg-blue-900">
@@ -62,20 +62,19 @@
       </div>
       
       <!---HERO-->
-      <div class="hero relative min-h-screen">
-        <img
-        src="assets/Hero.jpeg"
-        alt="Girl eating ice cream"
-        />
+      <div class="hero relative min-h-screen bg-blue-900">
+        <img src="assets/Hero.jpeg" alt="Girl eating ice cream" class="w-full h-auto sm:max-w-1/2 mx-auto">
+      
         <!-- Weather Info Container -->
-        <div id="weatherContainer" class="mb-6 absolute top-60 left-60"></div>
+        <div id="weatherContainer" class="mb-1 absolute top-60 left-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-md">
-            <!-- Weather Info Container -->
+
+         <!-- hero text for center page -->
             <h1 class="mb-5 text-5xl font-bold text-white">Hungry?</h1>
             <p class="mb-5 text-white">Rain or shine, we've got you covered.</p>
             <!--Search Form --->
-              <form id="searchForm" class="flex items-center mb-6">
+              <form id="searchForm" class="flex items-center mb-4">
                 <input
                 id="cityInput"
                 type="text"
@@ -85,7 +84,7 @@
                 />
                 <button
                 type="submit"
-                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                class="bg-blue-800 text-white focus: ring 4 focus:ring-blue-200 px-4 py-2 rounded"
                 >
                 Go!
               </button>
