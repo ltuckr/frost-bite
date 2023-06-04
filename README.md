@@ -15,7 +15,7 @@ To install and develop this project, we first had to create the repository and a
 
 1. GitHub Repository: https://github.com/ltuckr/frost-bite
 
-2. Project Url: https://github.com/ltuckr/frost-bite
+2. Project Url: https://ltuckr.github.io/frost-bite/
  --- 
 
 ## Images
