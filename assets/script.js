@@ -1,3 +1,7 @@
+function scrollToSearch() {
+  document.querySelector("#searchForm").scrollIntoView({ behavior: "smooth" });
+}
+
 document
   .getElementById("searchForm")
   .addEventListener("submit", function (event) {
@@ -47,14 +51,14 @@ document
         const windSpeed = weatherData.current.wind_mph;
 
         const weatherHtml = `
-    <div>
-      <h2>Weather in ${city}</h2>
-      <p>Temperature: ${temperature}°F</p>
-      <p>Description: ${weatherDescription}</p>
-      <p>Humidity: ${humidity}%</p>
-      <p>Wind Speed: ${windSpeed} mph</p>
-    </div>
-    `;
+      <div>
+        <h2>Weather in ${city}</h2>
+        <p>Temperature: ${temperature}°F</p>
+        <p>Description: ${weatherDescription}</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Wind Speed: ${windSpeed} mph</p>
+      </div>
+      `;
 
         const weatherContainer = document.getElementById("weatherContainer");
         weatherContainer.innerHTML = weatherHtml; // Display weather information
@@ -166,6 +170,9 @@ document
           // Update the search data object in local storage
           localStorage.setItem("searchData", JSON.stringify(updatedSearchData));
         }
+
+        // Clear search bar value after search
+        document.getElementById("cityInput").value = "";
       })
       .catch((error) => {
         console.log("Error:", error.message);
