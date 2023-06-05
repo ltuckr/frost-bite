@@ -1,6 +1,13 @@
+// When press search targets to search bar
 function scrollToSearch() {
   document.querySelector("#searchForm").scrollIntoView({ behavior: "smooth" });
 }
+// When icon in navbar pressed, page is refreshing
+const refreshIcon = document.getElementById("refreshIcon");
+
+refreshIcon.addEventListener("click", function () {
+  location.reload();
+});
 
 document
   .getElementById("searchForm")
