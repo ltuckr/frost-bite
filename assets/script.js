@@ -2,6 +2,7 @@
 function scrollToSearch() {
   document.querySelector("#searchForm").scrollIntoView({ behavior: "smooth" });
 }
+
 // When icon in navbar pressed, page is refreshing
 const refreshIcon = document.getElementById("refreshIcon");
 
@@ -13,6 +14,17 @@ document
   .getElementById("searchForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
+
+    // Display loader image
+    const loaderContainer = document.getElementById("loaderContainer");
+    loaderContainer.style.display = "block";
+
+    // Hide other containers
+    const weatherContainer = document.getElementById("weatherContainer");
+    weatherContainer.style.display = "none";
+
+    const resultContainer = document.getElementById("resultContainer");
+    resultContainer.style.display = "none";
 
     // Weather API key and URL
     const apiKey = "6075e79fd45d41f9ba605748232605";
@@ -58,13 +70,13 @@ document
         const windSpeed = weatherData.current.wind_mph;
 
         const weatherHtml = `
-      <div class="weather-color">
-        <h2>Weather in ${city}</h2>
-        <p>Temperature: ${temperature}°F</p>
-        <p>Description: ${weatherDescription}</p>
-        <p>Humidity: ${humidity}%</p>
-        <p>Wind Speed: ${windSpeed} mph</p>
-      </div>
+        <div class="weather-color">
+          <h2>Weather in ${city}</h2>
+          <p>Temperature: ${temperature}°F</p>
+          <p>Description: ${weatherDescription}</p>
+          <p>Humidity: ${humidity}%</p>
+          <p>Wind Speed: ${windSpeed} mph</p>
+        </div>
       `;
 
         const weatherContainer = document.getElementById("weatherContainer");
@@ -180,8 +192,20 @@ document
 
         // Clear search bar value after search
         document.getElementById("cityInput").value = "";
+
+        // Hide loader image
+        loaderContainer.style.display = "none";
+
+        // Show weather container
+        weatherContainer.style.display = "block";
+
+        // Show result container
+        resultContainer.style.display = "block";
       })
       .catch((error) => {
         console.log("Error:", error.message);
+
+        // Hide loader image in case of error
+        loaderContainer.style.display = "none";
       });
   });
