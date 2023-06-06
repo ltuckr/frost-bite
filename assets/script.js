@@ -58,7 +58,7 @@ document
         const windSpeed = weatherData.current.wind_mph;
 
         const weatherHtml = `
-      <div>
+      <div class="weather-color">
         <h2>Weather in ${city}</h2>
         <p>Temperature: ${temperature}°F</p>
         <p>Description: ${weatherDescription}</p>
