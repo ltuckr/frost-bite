@@ -13,3 +13,9 @@
     margin-bottom: 10px;
   }
 }
+.weather-color {
+  color: white;
+}
+.search-input {
+  color: black;
+}
