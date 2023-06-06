@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +30,7 @@
         <!-- site name & symbol -->
         <span id="refreshIcon" class="ml-1 text-3xl text-blue-200 font-semibold">FrostBite</span>
       </div>
-      
+
       <ul class="flex overflow-x-hidden mr-10 ml-auto font-semibold">
         <li class="p-1 border-b-2 border-orange-500">
           <a class="text-blue-200 cursor-pointer" onclick="scrollToSearch()">Search</a>
@@ -40,7 +41,7 @@
     <!-- HERO -->
     <div class="hero relative min-h-screen bg-gradient-to-r from-orange-400 to-blue-600">
       <!-- updated img class hides img on small screens -->
-      <img src="assets/Hero.jpeg" alt="Girl eating ice cream" class="hidden md:block object-cover w-full h-full"> 
+      <img src="assets/Hero.jpeg" alt="Girl eating ice cream" class="hidden md:block object-cover w-full h-full">
 
       <!-- hero text -->
       <div class="hero-content text-center text-neutral-content">
@@ -71,8 +72,13 @@
           <div class="font-semibold z-10 bg-transparent p-4">
             <div id="weatherContainer"></div>
             <pre>
-              
+
             </pre>
+
+            <!-- Loader Container -->
+            <div id="loaderContainer" style="display: none;">
+              <img src="./assets/loader.gif" alt="Loading..." class="mx-auto mt-8" />
+            </div>
 
             <!-- Card Container -->
             <div class="relative">
@@ -87,5 +93,5 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/script.js"></script>
   </body>
-</html>
 
+</html>

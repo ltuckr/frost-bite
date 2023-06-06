@@ -19,3 +19,11 @@
 .search-input {
   color: black;
 }
+#loaderContainer {
+  display: none;
+}
+
+#loaderImage {
+  display: block;
+  margin: 0 auto;
+}
