@@ -27,3 +27,8 @@
   display: block;
   margin: 0 auto;
 }
+.weather-color {
+  background-color: #545a8b;
+  padding: 5px;
+  border-radius: 20px;
+}
