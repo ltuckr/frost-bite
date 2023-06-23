@@ -15,6 +15,7 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
 
+
     // Display loader image
     const loaderContainer = document.getElementById("loaderContainer");
     loaderContainer.style.display = "block";
