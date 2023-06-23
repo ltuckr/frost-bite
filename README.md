@@ -20,9 +20,9 @@ To install and develop this project, we first had to create the repository and a
 
 ## Images
 ---
-![home page](./assets/Home%20page.png)
-![results page](./assets/results.png)
-![local storage](./assets/local%20storage.png)
+![home page](assets\images\Home page.png)
+![results page](assets\images\results.png)
+![local storage](assets\images\local storage.png)
 
 
 ## Credits
