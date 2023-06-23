@@ -32,3 +32,8 @@
   padding: 5px;
   border-radius: 20px;
 }
+.white-background {
+  padding: 50px;
+  background-color: rgb(128, 165, 201);
+  border-radius: 50px;
+}

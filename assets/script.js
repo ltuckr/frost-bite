@@ -24,6 +24,7 @@ document
     weatherContainer.style.display = "none";
 
     const resultContainer = document.getElementById("resultContainer");
+    resultContainer.classList.add("white-background");
     resultContainer.style.display = "none";
 
     // Weather API key and URL
