@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .hero {
     min-height: 100vh;
   }
@@ -11,6 +11,11 @@
   }
   #cityInput {
     margin-bottom: 10px;
+  }
+  .white-background {
+    display: none;
+    padding: 0;
+    border-radius: 0;
   }
 }
 .weather-color {
@@ -36,4 +41,11 @@
   padding: 50px;
   background-color: rgb(128, 165, 201);
   border-radius: 50px;
+}
+@media only screen and (max-width: 600px) {
+  .white-background {
+    display: none;
+    padding: 8px;
+    border-radius: 2px;
+  }
 }
